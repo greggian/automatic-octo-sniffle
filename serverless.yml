@@ -1,0 +1,26 @@
+service: aws-node-http-api-project
+frameworkVersion: '3'
+
+	
+params:
+  dev:
+    profile: gnyx-dev
+  prod:
+    profile: gnyx-prod
+
+provider:
+  name: aws
+  runtime: nodejs18.x
+  region: us-east-2
+  profile: ${param:profile}
+
+functions:
+  api:
+    handler: index.handler
+    url: true
+    environment: 
+      LIVEKIT_API_KEY: ${ssm:/livekit-api-key}
+      LIVEKIT_API_SECRET: ${ssm:/livekit-api-secret}
+
+plugins:
+  - serverless-better-credentials 

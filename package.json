@@ -1,0 +1,12 @@
+{
+  "name": "aws-node-http-api-project",
+  "version": "1.0.0",
+  "type": "module",
+  "dependencies": {
+    "livekit-server-sdk": "^1.2.6"
+  },
+  "devDependencies": {
+    "serverless": "^3.35.2",
+    "serverless-better-credentials": "^1.2.1"
+  }
+}
